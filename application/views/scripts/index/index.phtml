@@ -1,0 +1,19 @@
+<a href="https://www.facebook.com/dialog/oauth?client_id=
+                <?= Zend_Registry::get('constants')->fboauth->app_id ?>
+                &redirect_uri=
+                <?= Zend_Registry::get('constants')->fboauth->redirect_uri ?>
+                &response_type=code">Login via Facebook
+    </a>
+
+<?php
+
+    $session = new Zend_Session_Namespace('facebook');
+
+    echo "session->id = '$session->id'<br>";
+    echo "session->name = '$session->name'<br>";
+    echo "session->username = '$session->username'<br>";
+    echo "session->link = '$session->link'<br>";
+    echo "session->hometown_id = '$session->hometown_id'<br>";
+    echo "session->hometown_name = '$session->hometown_name'<br><br>";
+    echo "session->avatar = <img src=\"$session->avatar\"><br>";
+?>
